@@ -169,7 +169,8 @@
       document.querySelectorAll(".content").forEach(function (e) {
         ob.observe(e);
       });
-      document.querySelectorAll(".player").forEach(function (e, i) {
+      var players = document.querySelectorAll(".player");
+      players.forEach(function (e, i) {
         e.style.backgroundImage = 'url("' + (i + 1) + '.jpg")';
         e.addEventListener("click", function () {
           e.scrollIntoView({
@@ -179,6 +180,15 @@
           });
         });
       });
+      var index = 0;
+      setInterval(function () {
+        index = (index + 1) % players.length;
+        players[index].scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "center",
+        });
+      }, 3000);
     </script>
     <script src="jquery.min.js"></script>
     <script src="jquery.stellar.min.js"></script>
