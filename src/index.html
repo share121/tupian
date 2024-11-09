@@ -178,8 +178,6 @@
       </div>
     </div>
 
-    <script src="jquery.min.js"></script>
-    <script src="jquery.stellar.min.js"></script>
     <script>
       var ele = document.querySelectorAll(".title, .subtitle");
       var ob = new IntersectionObserver(function (entries) {
@@ -204,6 +202,10 @@
           });
         });
       });
+    </script>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.stellar.min.js"></script>
+    <script>
       $("#stage").stellar({
         horizontalScrolling: false,
         responsive: true,
