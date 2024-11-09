@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片</title>
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        scroll-behavior: smooth;
+        overflow-wrap: break-word;
+      }
+
+      body {
+        margin: 0;
+        color: #fff;
+      }
+
+      #stage {
+        height: 100vh;
+        overflow: auto;
+        scroll-snap-type: block;
+      }
+
+      #stage .player {
+        position: relative;
+        height: 100vh;
+        background-attachment: fixed;
+        background-position-x: center;
+        background-size: cover;
+        scroll-snap-align: center;
+      }
+
+      #stage .wapper {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: 10vmin;
+        background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      }
+
+      #stage .title {
+        margin: 0.2vmin 0;
+        font-size: 6vmin;
+      }
+
+      #stage .subtitle {
+        font-size: 3vmin;
+      }
+
+      #stage .content > * {
+        transform: translateY(5vmin);
+        opacity: 0;
+        transition: transform 1s ease, opacity 1s ease;
+      }
+
+      #stage .subtitle {
+        transition-delay: 0.25s;
+      }
+
+      #stage .content.actived > * {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="stage">
+      <div class="player" data-stellar-background-ratio="0.5">
+        <div class="wapper">
+          <div class="content">
+            <h2 class="title">
+              kewdjflksjdflk sldfk jsldjf
+            </h2>
+            <p class="subtitle">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam,
+              recusandae commodi sed voluptatum laborum quaerat quod eius
+              adipisci tenetur sit! Corrupti, sed quos deleniti quidem
+              asperiores quasi iure! Dolorum, suscipit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="player" data-stellar-background-ratio="0.5">
+        <div class="wapper">
+          <div class="content">
+            <h2 class="title">
+              kewdjflksjdflk sldfk jsldjf
+            </h2>
+            <p class="subtitle">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam,
+              recusandae commodi sed voluptatum laborum quaerat quod eius
+              adipisci tenetur sit! Corrupti, sed quos deleniti quidem
+              asperiores quasi iure! Dolorum, suscipit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="player" data-stellar-background-ratio="0.5">
+        <div class="wapper">
+          <div class="content">
+            <h2 class="title">
+              kewdjflksjdflk sldfk jsldjf
+            </h2>
+            <p class="subtitle">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam,
+              recusandae commodi sed voluptatum laborum quaerat quod eius
+              adipisci tenetur sit! Corrupti, sed quos deleniti quidem
+              asperiores quasi iure! Dolorum, suscipit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="player" data-stellar-background-ratio="0.5">
+        <div class="wapper">
+          <div class="content">
+            <h2 class="title">
+              kewdjflksjdflk sldfk jsldjf
+            </h2>
+            <p class="subtitle">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam,
+              recusandae commodi sed voluptatum laborum quaerat quod eius
+              adipisci tenetur sit! Corrupti, sed quos deleniti quidem
+              asperiores quasi iure! Dolorum, suscipit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="player" data-stellar-background-ratio="0.5">
+        <div class="wapper">
+          <div class="content">
+            <h2 class="title">
+              kewdjflksjdflk sldfk jsldjf
+            </h2>
+            <p class="subtitle">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam,
+              recusandae commodi sed voluptatum laborum quaerat quod eius
+              adipisci tenetur sit! Corrupti, sed quos deleniti quidem
+              asperiores quasi iure! Dolorum, suscipit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="player" data-stellar-background-ratio="0.5">
+        <div class="wapper">
+          <div class="content">
+            <h2 class="title">
+              kewdjflksjdflk sldfk jsldjf
+            </h2>
+            <p class="subtitle">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam,
+              recusandae commodi sed voluptatum laborum quaerat quod eius
+              adipisci tenetur sit! Corrupti, sed quos deleniti quidem
+              asperiores quasi iure! Dolorum, suscipit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="player" data-stellar-background-ratio="0.5">
+        <div class="wapper">
+          <div class="content">
+            <h2 class="title">
+              kewdjflksjdflk sldfk jsldjf
+            </h2>
+            <p class="subtitle">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam,
+              recusandae commodi sed voluptatum laborum quaerat quod eius
+              adipisci tenetur sit! Corrupti, sed quos deleniti quidem
+              asperiores quasi iure! Dolorum, suscipit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script src="jquery.stellar.min.js"></script>
+    <script>
+      var ele = document.querySelectorAll(".title, .subtitle");
+      var ob = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            entries[i].target.classList.add("actived");
+          } else {
+            entries[i].target.classList.remove("actived");
+          }
+        }
+      }, {});
+      document.querySelectorAll(".content").forEach(function (e) {
+        ob.observe(e);
+      });
+      document.querySelectorAll(".player").forEach(function (e, i) {
+        e.style.backgroundImage = 'url("' + (i + 1) + '.jpg")';
+        e.addEventListener("click", function () {
+          e.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+        });
+      });
+      $("#stage").stellar({
+        horizontalScrolling: false,
+        responsive: true,
+      });
+    </script>
+  </body>
+</html>
